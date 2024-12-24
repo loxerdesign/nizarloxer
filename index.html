@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الرئيسية</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Cairo:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/images/2020.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link href="https://cdn.jsdelivr.net/npm/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<style>
+    html {
+        scroll-behavior: smooth; /* لجعل التنقل سلسًا */
+    }
+</style>
+<body>
+    <!-- شاشة التحميل -->
+    <style>
+        /* Full-screen loading screen */
+        #loadingScreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+
+        /* Hide loading screen after page load */
+        #loadingScreen.hide {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Circle with rotating effect */
+        .loading-content {
+            text-align: center;
+            position: relative;
+        }
+
+        .loading-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 8px solid rgba(255, 255, 255, 0.3);
+            border-top: 8px solid #fff;
+            animation: spin 2s linear infinite;
+            position: relative;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Animation for the rotating circle */
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Text below the loading circle */
+        .loading-text {
+            color: #fff;
+            font-size: 18px;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 600;
+        }
+
+    </style>
+    <!-- شاشة التحميل -->
+    <div id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-circle">
+            </div>
+            <div class="loading-text">جارٍ التحميل...</div>
+        </div>
+    </div>
+    
+    <!-- JavaScript -->
+    <script>
+        // Simulate page load and hide loading screen after 3 seconds
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                document.getElementById('loadingScreen').classList.add('hide');
+            }, 3000); // Hide after 3 seconds
+        });
+    </script>
+
+    <!-- Bootstrap and AOS Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+
+    <!-- الرأس -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-with bg-with">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">NIZARLOXER</a>
+            </div>
+        </nav>
+        <style>
+            header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px; /* يمكنك تعديل الارتفاع حسب الحاجة */
+}
+        </style>
+    </header>
+    
+
+    <script>
+        // إخفاء شاشة التحميل بعد تحميل الصفحة بالكامل
+        window.addEventListener('load', function () {
+            const loadingScreen = document.getElementById('loadingScreen');
+            loadingScreen.style.display = 'none';
+        });
+    </script>
+    
+    <!-- JavaScript -->
+    <script>
+        // Simulate page load and hide loading screen after 3 seconds
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                document.getElementById('loadingScreen').classList.add('hide');
+            }, 3000); // Hide after 3 seconds
+        });
+    </script>
+
+    <!-- Bootstrap and AOS Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+<!-- قسم طلب الخدمة -->
+<section class="request-service py-5" style="background-color: #ffffff;">
+    <div class="container">
+        <h2 class="text-center mb-4">طلب خدمة</h2>
+        <form id="serviceForm">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="name" class="form-label">الاسم</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="phone" class="form-label">رقم الهاتف</label>
+                    <input type="text" class="form-control" id="phone" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">البريد الإلكتروني</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="service" class="form-label">اختر الخدمة</label>
+                <select class="form-select" id="service" required>
+                    <option value="اختر">اختر</option>
+                    <option value="تقديم">power  point - تقديم</option>
+                </select>
+            </div>
+
+            <!-- حقول إضافية عند اختيار "تقديم" -->
+            <div id="presentationFields" style="display:none;">
+                <div class="mb-3">
+                    <label for="topic" class="form-label">الموضوع</label>
+                    <input type="text" class="form-control" id="topic">
+                </div>
+                <!-- حقل الوصف الجديد -->
+                <div class="mb-3">
+                <label for="description" class="form-label">الوصف</label>
+                <textarea class="form-control" id="description" rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="pages" class="form-label">عدد الصفحات</label>
+                    <input type="number" class="form-control" id="pages" value="10" min="10">
+                </div>
+                <div class="mb-3">
+                    <label for="language" class="form-label">اختيار اللغة</label>
+                    <select class="form-select" id="language">
+                        <option value="" data-price="0">اختر اللغة</option>
+                        <option value="ar" data-price="5">العربية (+5 دراهم)</option>
+                        <option value="fr" data-price="10">الفرنسية (+10 دراهم)</option>
+                        <option value="en" data-price="20">الإنجليزية (+20 دراهم)</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="includeVideo" class="form-label">
+                        <input type="checkbox" id="includeVideo" data-price="2"> تضمين فيديو (+2 دراهم)
+                    </label>
+                </div>
+                <div class="mb-3">
+                    <label for="includeAI" class="form-label">
+                        <input type="checkbox" id="includeAI" data-price="5"> تضمين AI (+5 دراهم)
+                    </label>
+                </div>
+                <!-- حقل اختيار التصميم -->
+<div class="mb-3">
+    <label for="theme" class="form-label">اختيار السمة (Dark أو Light)</label>
+    <select class="form-select" id="theme" required>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</div>
+                <!-- حقل موعد تقديم العرض -->
+<div class="mb-3">
+    <label for="presentationDate" class="form-label">موعد تقديم العرض</label>
+    <input type="datetime-local" class="form-control" id="presentationDate" required>
+</div>
+
+                
+            </div>
+
+            <!-- عرض الإجمالي -->
+            <div class="mb-3">
+                <label for="totalPrice" class="form-label">الإجمالي بالدرهم :</label>
+                <input type="text" class="form-control" id="totalPrice" value="0" readonly>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">إرسال الطلب</button>
+        </form>
+    </div>
+</section>
+
+<script>
+    // إظهار الحقول الإضافية عند اختيار "تقديم"
+    document.getElementById('service').addEventListener('change', function () {
+        const presentationFields = document.getElementById('presentationFields');
+        if (this.value === 'تقديم') {
+            presentationFields.style.display = 'block';
+        } else {
+            presentationFields.style.display = 'none';
+        }
+    });
+
+// حساب الإجمالي
+const calculateTotal = () => {
+    let total = 0;
+
+    // عدد الصفحات
+    const pages = parseInt(document.getElementById('pages').value) || 0;
+    total += pages;
+
+    // اللغة
+    const language = document.getElementById('language');
+    const languagePrice = parseInt(language.options[language.selectedIndex].dataset.price) || 0;
+    total += languagePrice;
+
+    // تضمين الفيديو
+    const includeVideo = document.getElementById('includeVideo');
+    if (includeVideo.checked) {
+        total += parseInt(includeVideo.dataset.price);
+    }
+
+    // تضمين AI
+    const includeAI = document.getElementById('includeAI');
+    if (includeAI.checked) {
+        total += parseInt(includeAI.dataset.price);
+    }
+
+    // موعد تقديم العرض
+    const presentationDate = document.getElementById('presentationDate').value;
+    if (presentationDate) {
+        const selectedDate = new Date(presentationDate);
+        const currentDate = new Date();
+
+        // التحقق إذا كان الموعد في حدود 24 ساعة
+        const timeDifference = selectedDate - currentDate;
+        const hoursDifference = timeDifference / (1000 * 60 * 60);
+
+        if (hoursDifference > 0 && hoursDifference <= 24) {
+            total += 15; // إضافة 15 درهم
+        }
+    }
+
+    // تحديث الإجمالي
+    document.getElementById('totalPrice').value = total + ' درهم';
+};
+
+// تحديث الإجمالي عند تغيير أي حقل
+document.getElementById('presentationFields').addEventListener('input', calculateTotal);
+document.getElementById('presentationDate').addEventListener('change', calculateTotal);
+
+// إرسال الطلب إلى واتساب
+document.getElementById('serviceForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    // جمع البيانات
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const email = document.getElementById('email').value;
+    const service = document.getElementById('service').value;
+    let message = `طلب خدمة من: ${name}\nرقم الهاتف: ${phone}\nالبريد الإلكتروني: ${email}\nالخدمة المطلوبة: ${service}`;
+
+    if (service === 'تقديم') {
+        const topic = document.getElementById('topic').value;
+        const description = document.getElementById('description').value;
+        const pages = document.getElementById('pages').value;
+        const language = document.getElementById('language');
+        const languageText = language.options[language.selectedIndex].text;
+        const includeVideo = document.getElementById('includeVideo').checked ? 'نعم' : 'لا';
+        const includeAI = document.getElementById('includeAI').checked ? 'نعم' : 'لا';
+        const totalPrice = document.getElementById('totalPrice').value;
+        const presentationDate = document.getElementById('presentationDate').value;
+        const theme = document.getElementById('theme').value;  // الحصول على السمة المختارة
+
+        message += `\nالموضوع: ${topic}\nالوصف: ${description}\nعدد الصفحات: ${pages}\nاللغة: ${languageText}\nتضمين فيديو: ${includeVideo}\nتضمين AI: ${includeAI}\nموعد تقديم العرض: ${presentationDate}\nالسمة المختارة: ${theme}\nالإجمالي: ${totalPrice}`;
+    }
+
+    // إنشاء رابط واتساب
+    const whatsappLink = `https://wa.me/212607878182?text=${encodeURIComponent(message)}`;
+    window.open(whatsappLink, '_blank');
+});
+
+
+</script>
+
+    <!-- الفوتر -->
+<!-- Footer -->
+<footer class="bg-white text-black text-center py-4 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-3 mb-md-0">
+                <h5>روابط سريعة</h5>
+                <ul class="list-unstyled">
+                    <li><a href="index.html" class="text-black text-decoration-none">الرئيسية</a></li>
+                    <li><a href="contact.html" class="text-black text-decoration-none">اتصل بنا</a></li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h5>تابعنا</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-blue text-decoration-none">Facebook</a></li>
+                    <li><a href="#" class="text-green text-decoration-none">WhatsApp</a></li>
+                    <li><a href="#" class="text-blue text-decoration-none">Twitter</a></li>
+                    <li><a href="#" class="text-rose text-decoration-none">Instagram</a></li>
+                </div>
+            </div>
+        </div>
+        <div class="mt-3">
+            <p>&copy; 2024 موقع تقديم. جميع الحقوق محفوظة.</p>
+        </div>
+    </div>
+</footer>
+
+    <!-- JavaScript (Bootstrap and Animations) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    
+</body>
+<body>
+    <div>
+       <div class="wave"></div>
+       <div class="wave"></div>
+       <div class="wave"></div>
+    </div>
+  </body>
+  <style>
+    body {
+margin: auto;
+font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+overflow: auto;
+background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
+animation: gradient 15s ease infinite;
+background-size: 400% 400%;
+background-attachment: fixed;
+}
+
+@keyframes gradient {
+0% {
+    background-position: 0% 0%;
+}
+50% {
+    background-position: 100% 100%;
+}
+100% {
+    background-position: 0% 0%;
+}
+}
+
+.wave {
+background: rgb(255 255 255 / 25%);
+border-radius: 1000% 1000% 0 0;
+position: fixed;
+width: 200%;
+height: 12em;
+animation: wave 10s -3s linear infinite;
+transform: translate3d(0, 0, 0);
+opacity: 0.8;
+bottom: 0;
+left: 0;
+z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+bottom: -1.25em;
+animation: wave 18s linear reverse infinite;
+opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+bottom: -2.5em;
+animation: wave 20s -1s reverse infinite;
+opacity: 0.9;
+}
+
+@keyframes wave {
+2% {
+    transform: translateX(1);
+}
+
+25% {
+    transform: translateX(-25%);
+}
+
+50% {
+    transform: translateX(-50%);
+}
+
+75% {
+    transform: translateX(-25%);
+}
+
+100% {
+    transform: translateX(1);
+}
+}
+  </style>
+</html>
