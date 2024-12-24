@@ -3,6 +3,7 @@ body {
   font-family: 'Cairo', sans-serif;
   background-size: 400% 400%;
   animation: gradient 10s ease infinite;
+  text-align: center;
 }
 
 /* شاشة التحميل */
