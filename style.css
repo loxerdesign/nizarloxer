@@ -1,7 +1,6 @@
 /* إضافة خط Cairo */
 body {
   font-family: 'Cairo', sans-serif;
-  background: linear-gradient(45deg, #ffffff, #ffffff);
   background-size: 400% 400%;
   animation: gradient 10s ease infinite;
 }
@@ -31,10 +30,6 @@ body {
   text-align: center;
 }
 
-.loading-logo {
-  width: 100px;
-  margin-bottom: 20px;
-}
 
 .spinner {
   border: 4px solid #f3f3f3;
@@ -60,9 +55,6 @@ body {
   background: transparent;
 }
 
-.navbar-toggler-icon {
-  background-color: white;
-}
 
 @media (min-width: 768px) {
   header nav ul {
@@ -80,186 +72,8 @@ body {
   font-weight: 600;
 }
 
-.nav-link {
-  font-size: 1.1rem;
-  padding: 10px 15px;
-}
-
-/* قسم البطل */
-.hero {
-  position: relative;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-}
-
-.hero h1 {
-  font-size: 3.5rem;
-  font-weight: 600;
-}
-
-.hero p {
-  font-size: 1.5rem;
-}
-
-.hero .btn {
-  font-size: 1.2rem;
-  padding: 15px 30px;
-  border-radius: 50px;
-  background-color: #3498db;
-  border: none;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-}
-
-.hero .btn:hover {
-  background-color: #2980b9;
-  transform: scale(1.1);
-}
-
-/* قسم المميزات */
-.features .feature-card {
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.features .feature-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-}
-
-.features .feature-card i {
-  color: #3498db;
-  font-size: 3rem;
-  transition: color 0.3s ease;
-}
-
-.features .feature-card:hover i {
-  color: #2980b9;
-}
-
-/* قسم المراجعات */
-.reviews .review-card {
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.reviews .review-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-}
-
-/* تأثيرات جديدة */
-.hero h1 {
-  font-size: 4rem;
-  font-family: 'Cairo', sans-serif;
-}
-
-.hero p {
-  font-size: 1.5rem;
-  font-family: 'Cairo', sans-serif;
-}
-
-/* Gallery Section Styling */
-.gallery {
-  background-color: #f9f9f9;
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
-.gallery h2 {
-  font-size: 2.5rem;
-  color: #333;
-  font-weight: 600;
-  margin-bottom: 40px;
-}
-
-.gallery-item {
-  background-color: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.gallery-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-.embed-responsive {
-  position: relative;
-  display: block;
-  width: 100%;
-  padding: 0;
-  overflow: hidden;
-  height: 0;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
-}
-
-.embed-responsive-item {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-@media (max-width: 767px) {
-  .gallery h2 {
-      font-size: 2rem;
-  }
-}
-
-
-.accordion-button {
-  background-color: #2980b9;
-  color: white;
-  font-size: 1.2rem;
-}
-
-.accordion-button:focus {
-  box-shadow: none;
-}
-
-.testimonial-card {
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.testimonial-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-}
-
-.statistics h3 {
-  font-size: 3rem;
-  font-family: 'Cairo', sans-serif;
-}
-
-.hero {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-}
-
-.testimonial-card {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-
 .contact-form {
-  background-color: #f9f9f9;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 30px;
 }
 @font-face {
